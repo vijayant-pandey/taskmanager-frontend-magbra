@@ -1,7 +1,8 @@
 // frontend/src/services/taskService.js
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/tasks"; // adjust if needed
+// const API_URL = "http://localhost:5000/api/tasks"; // adjust if needed
+const API_URL = `${process.env.REACT_APP_API_URL}/tasks`;
 
 export const getTasks = async (page = 1, token) => {
   const res = await axios.get(`${API_URL}?page=${page}&limit=6`, {
